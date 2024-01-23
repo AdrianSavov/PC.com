@@ -5,6 +5,7 @@ import Services from "../Services/Services";
 import PricingPlan from "../PricingPlan/PricingPlan";
 import SpecialOffer from "../SpecialOffer/SpecialOffer";
 import Footer from "../Footer/Footer";
+import Contact from "../Contact/Contact";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Services />
       <PricingPlan />
       <SpecialOffer />
+      <Contact />
       <Footer />
     </>
   );
