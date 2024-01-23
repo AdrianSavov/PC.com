@@ -1,11 +1,13 @@
 import './App.css'
-import Navbar from './Components/Navbar/Navbar'
+import BackToTopButton from './components/BackToTopButton/BackToTopButton';
+import RouterConfig from './RouterConfig/RouterConfig';
 
 function App() {
 
   return (
     <>
-    <Navbar />
+      <RouterConfig />
+      <BackToTopButton />
     </>
   )
 }
