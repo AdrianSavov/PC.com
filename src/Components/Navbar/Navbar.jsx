@@ -8,6 +8,7 @@ export default function Navbar() {
   const handleScroll = () => {
     const aboutSection = document.getElementById("about-section");
     const serviceSection = document.getElementById("services-section");
+    const contactSection = document.getElementById("contact-section");
 
     const scrollPosition = window.scrollY + 90;
 
@@ -19,6 +20,8 @@ export default function Navbar() {
       setActiveLink("about");
     } else if (serviceSection && scrollPosition >= serviceSection.offsetTop) {
       setActiveLink("service");
+    } else if (contactSection && scrollPosition >= contactSection.offsetTop) {
+      setActiveLink("contact");
     } else {
       setActiveLink("home");
     }
@@ -99,27 +102,36 @@ export default function Navbar() {
               Parts
             </Link>
             <div className="dropdown-menu m-0">
-              <Link to="/price" className="dropdown-item">
-                Pricing Plan
+              <Link to="/processors" className="dropdown-item">
+                Processors
               </Link>
-              <Link to="/blog" className="dropdown-item">
-                Blog Grid
+              <Link to="/motherboards" className="dropdown-item">
+                Motherboards
               </Link>
-              <Link to="/detail" className="dropdown-item">
-                Blog Detail
+              <Link to="/graphic-cards" className="dropdown-item">
+                Graphic Cards
               </Link>
-              <Link to="/team" className="dropdown-item">
-                The Team
+              <Link to="/keyboards-mouses" className="dropdown-item">
+                Keyboards & Mouses
               </Link>
-              <Link to="/testimonial" className="dropdown-item">
-                Testimonial
+              <Link to="/memory" className="dropdown-item">
+                RAM Memory
               </Link>
             </div>
           </li>
           <li className="nav-item">
-            <Link to="/contact" className="nav-link">
+          <ScrollLink
+              style={{ cursor: "pointer" }}
+              activeClass="active"
+              to="contact-section"
+              spy={true}
+              smooth={true}
+              offset={-90}
+              duration={800}
+              className={`nav-link ${activeLink === "contact" ? "active" : ""}`}
+            >
               Contact
-            </Link>
+            </ScrollLink>
           </li>
           <li className="nav-item">
             <a
